@@ -1,0 +1,28 @@
+<div *ngIf="pokemon" class="pokemonWrapper">
+    <div class="imageWrapper">
+        <img [src]="'https://robohash.org/' + pokemon!.name + '/?size=500x500'" [alt]="pokemon!.name" />
+        <button (click)="goBack()">Back</button>
+    </div>
+    <div [formGroup]="form" novalidate class="abilitiesWrapper">
+        <label>
+            Name:
+            <input type="text" formControlName="name" />
+        </label>
+        <label>
+            Abilities:
+            <span *ngFor="let ability of pokemon.abilities">{{ ability.ability.name }} </span>
+        </label>
+        <label>
+            Base experience:
+            <input type="text" formControlName="base_experience" />
+        </label>
+        <label>
+            Height:
+            <input type="text" formControlName="height" />
+        </label>
+        <label>
+            Weight:
+            <input type="text" formControlName="weight" />
+        </label>
+    </div>
+</div>

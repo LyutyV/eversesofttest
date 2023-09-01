@@ -1,0 +1,41 @@
+$padding: 20px;
+$boxMargin: 10px;
+$boxesInline: 3;
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .slider {
+        display: flex;
+        justify-content: center;
+        flex-flow: wrap;
+        padding: $padding;
+        height: calc(100% - 80px);
+        overflow-y: auto;
+        > .pokemonWrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            min-width: calc((100% / #{$boxesInline}) - (#{$boxMargin} * 2)); // 2 are left and right margins of box
+            height: calc((100% / 2) - (#{$boxMargin} * 2)); // 2 are left and right margins of box
+            box-sizing: border-box;
+            border: 3px solid darkblue;
+            margin: $boxMargin;
+            cursor: pointer;
+            transition: 100ms all ease;
+            &:hover {
+                background-color: lightgray;
+            }
+            > h4 {
+                text-transform: capitalize;
+                font-size: 2vw;
+                transition: font-size 0.1s ease;
+            }
+            > img {
+                height: 40%;
+            }
+        }
+    }
+}
