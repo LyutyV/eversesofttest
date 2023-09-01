@@ -1,0 +1,7 @@
+<paginator></paginator>
+<div *ngIf="pokemons" class="slider">
+    <div *ngFor="let pokemon of pokemons" class="pokemonWrapper" [routerLink]="'/' + pokemon.name">
+        <h4>{{ pokemon.name }}</h4>
+        <img [src]="'https://robohash.org/' + pokemon.name + '/?size=250x250'" [alt]="pokemon.name" />
+    </div>
+</div>

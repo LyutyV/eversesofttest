@@ -1,0 +1,10 @@
+<div>
+    <button (click)="paginatorService.first()" [disabled]="paginatorService.isFirstPage">First</button>
+    <button (click)="paginatorService.previous()" [disabled]="paginatorService.isFirstPage">Previous</button>
+    <label>
+        Current page
+        <input type="text" [formControl]="currentPageInput" min="1" [max]="paginatorService.totalPagesCount" />
+    </label>
+    <button (click)="paginatorService.next()" [disabled]="paginatorService.isLastPage">Next</button>
+    <button (click)="paginatorService.last()" [disabled]="paginatorService.isLastPage">Last</button>
+</div>
